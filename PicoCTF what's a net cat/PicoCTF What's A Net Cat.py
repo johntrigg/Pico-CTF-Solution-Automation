@@ -5,11 +5,6 @@ import pwn #from pwn import remote as brandon
 def whatsANetCat():
     pwn.context.log_level = "error"
 
-    x = os.popen("dir").read()
-
-    print(x)
-
-
     url = "jupiter.challenges.picoctf.org"
 
     port = 25103
@@ -22,6 +17,6 @@ def whatsANetCat():
 
     flag = re.findall(r"picoCTF{.*?}", output)[0]#take the output, find the first occurance of the regex, and put it into var flag
 
-    print(flag)
+    print(flag)#print the flag found via regex
 
 whatsANetCat()
